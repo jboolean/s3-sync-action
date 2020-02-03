@@ -15,5 +15,7 @@ ENV AWSCLI_VERSION='1.17.1'
 
 RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
 
+RUN echo "audio/mp4 m4a" >> /etc/mime.types
+
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
